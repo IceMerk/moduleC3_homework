@@ -30,7 +30,7 @@ class KitchenDevice extends Device {
     }
 
     getPower() {
-        return this.type ? `${this.name} - потребляет ${this.power}кв/ч` : `Берем в руку ${this.name} и работаем`
+        return this.type ? `${this.name} - потребляет ${this.power} кв/ч` : `Берем в руку ${this.name} и работаем`
     }
 
     getType() {
@@ -39,7 +39,7 @@ class KitchenDevice extends Device {
 }
 
 class RoomDevice extends Device {
-    constructor(name, type, clasess, info, power, light) {
+    constructor(name, type, power, clasess, info, light) {
         super(clasess, info);
         this.name = name;
         this.type = type;
@@ -65,7 +65,7 @@ const knife = new KitchenDevice('Нож', false, undefined, ...kitchen);
 
 const tv = new RoomDevice('Телевизор', true, 200, 'ярко', ...room);
 const lampa = new RoomDevice('Лампа', true, 200, 'ярко', ...room);
-const sofa = new RoomDevice('Диван', false, ...room)
+const sofa = new RoomDevice('Диван', false, undefined, ...room)
 
 console.log(mikser.getOn())
 console.log(fridge.getPower())
