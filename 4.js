@@ -36,18 +36,10 @@ function KitchenDevice(name, type, power) {
     this.type = type;
     this.power = power;
     this.getPower = function () {
-        if (this.type) {
-            return `${this.name} - потребляет ${this.power}кв/ч`;
-        } else {
-            return `Берем в руку ${this.name} и работаем`;
-        }
+        return this.type ? `${this.name} - потребляет ${this.power}кв/ч` : `Берем в руку ${this.name} и работаем`
     }
     this.getType = function () {
-        if (this.type) {
-            return `${this.name} работает от электричества`;
-        } else {
-            return `${this.name} для работы руками`;
-        }
+        return this.type ? `${this.name} работает от электричества` : `${this.name} для работы руками`
     }
 }
 
@@ -58,18 +50,10 @@ function RoomDevice(name, type, power, light) {
     this.power = power;
     this.light = light;
     this.getPower = function () {
-        if (this.type) {
-            return `${this.name} - потребляет ${this.power} кв/ч и светит ${this.light}`;
-        } else {
-            return `${this.name} можно только сломать или потерять`;
-        }
+        return this.type ? `${this.name} - потребляет ${this.power} кв/ч и светит ${this.light}` : `${this.name} можно только сломать или потерять`
     }
     this.getSit = function () {
-        if (this.type) {
-            return `${this.name} работает от электричества, лучше не садиться`;
-        } else {
-            return `Садимся на ${this.name} и отдыхаем`;
-        }
+        return this.type ? `${this.name} работает от электричества, лучше не садиться` : `Садимся на ${this.name} и отдыхаем`
     }
 }
 

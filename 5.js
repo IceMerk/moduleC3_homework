@@ -30,24 +30,16 @@ class KitchenDevice extends Device {
     }
 
     getPower() {
-        if (this.type) {
-            return `${this.name} - потребляет ${this.power}кв/ч`;
-        } else {
-            return `Берем в руку ${this.name} и работаем`;
-        }
+        return this.type ? `${this.name} - потребляет ${this.power}кв/ч` : `Берем в руку ${this.name} и работаем`
     }
 
     getType() {
-        if (this.type) {
-            return `${this.name} работает от электричества`;
-        } else {
-            return `${this.name} для работы руками`;
-        }
+        return this.type ? `${this.name} работает от электричества` : `${this.name} для работы руками`
     }
 }
 
 class RoomDevice extends Device {
-    constructor(name, type, power, light, clasess, info) {
+    constructor(name, type, clasess, info, power, light) {
         super(clasess, info);
         this.name = name;
         this.type = type;
@@ -56,19 +48,11 @@ class RoomDevice extends Device {
     }
 
     getPower() {
-        if (this.type) {
-            return `${this.name} - потребляет ${this.power} кв/ч и светит ${this.light}`;
-        } else {
-            return `${this.name} можно только сломать или потерять`;
-        }
+        return this.type ? `${this.name} - потребляет ${this.power} кв/ч и светит ${this.light}` : `${this.name} можно только сломать или потерять`
     }
 
     getSit() {
-        if (this.type) {
-            return `${this.name} работает от электричества, лучше не садиться`;
-        } else {
-            return `Садимся на ${this.name} и отдыхаем`;
-        }
+        return this.type ? `${this.name} работает от электричества, лучше не садиться` : `Садимся на ${this.name} и отдыхаем`
     }
 }
 
@@ -81,7 +65,7 @@ const knife = new KitchenDevice('Нож', false, undefined, ...kitchen);
 
 const tv = new RoomDevice('Телевизор', true, 200, 'ярко', ...room);
 const lampa = new RoomDevice('Лампа', true, 200, 'ярко', ...room);
-const sofa = new RoomDevice('Диван', false, undefined, undefined, ...room)
+const sofa = new RoomDevice('Диван', false, ...room)
 
 console.log(mikser.getOn())
 console.log(fridge.getPower())
