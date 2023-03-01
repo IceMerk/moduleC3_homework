@@ -81,7 +81,7 @@ const knife = new KitchenDevice('Нож', false, undefined, ...kitchen);
 
 const tv = new RoomDevice('Телевизор', true, 200, 'ярко', ...room);
 const lampa = new RoomDevice('Лампа', true, 200, 'ярко', ...room);
-const sofa = new RoomDevice('Диван', false, undefined, ...room)
+const sofa = new RoomDevice('Диван', false, undefined, undefined, ...room)
 
 console.log(mikser.getOn())
 console.log(fridge.getPower())
